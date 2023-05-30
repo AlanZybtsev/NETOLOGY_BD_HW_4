@@ -161,7 +161,6 @@ values
 	(4, 51);
 
 --select * from compilations_compositions
-
 --delete from albums
 --select * from musicians m 
 --select * from genres g 
