@@ -33,17 +33,19 @@ create table if not exists compositions (
 	album_id int references albums (album_id)
 );
 
+create table if not exists compilations (
+	compilation_id serial primary key, 
+	compilation_name varchar(150) unique,
+	compilation_year int check (compilation_year > 1920)
+);
+
+
 create table if not exists compilations_compositions (
 	compilation_id int references compilations (compilation_id), 
 	composition_id int references compositions (composition_id),
 	constraint pkey primary key (compilation_id, composition_id)
 );
 
-create table if not exists compilations (
-	compilation_id serial primary key, 
-	compilation_name varchar(150) unique,
-	compilation_year int check (compilation_year > 1920)
-);
 
 --drop table compilations cascade;
 --drop table genres cascade;
